@@ -1,15 +1,15 @@
 FROM python:3.8
 
-RUN apt update
+RUN apt update && apt install python3 python3-pip python3-venv -y
 
-RUN apt install python3 python3-pip python3-venv -y
+WORKDIR /home/app
 
-RUN mkdir /opt/service-1
-
-COPY . /opt/service-1
-
-WORKDIR /opt/service-1
+COPY requirements.txt /home/app
 
 RUN pip3 install -r requirements.txt
+
+COPY . /service-1 /home/app
+
+EXPOSE 5000
 
 ENTRYPOINT ["python3", "app.py"]
