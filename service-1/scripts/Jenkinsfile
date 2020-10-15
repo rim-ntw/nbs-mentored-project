@@ -1,20 +1,25 @@
 pipeline {
 	agent any
 	stages {
-		stage('Test'){
+		stage('Create Network'){
 			steps {
-				sh './scripts/test.sh'
+				sh './network.sh'
 			}
 		}
-		stage('Build'){
+		stage('Build service-1'){
 			steps {
-				sh './scripts/build.sh'
+				sh './service-1/scripts/build.sh'
 			}
 		}
-		stage('Push'){
+		stage('Push service-1'){
 			steps {
-				sh './scripts/push.sh'	
+				sh './service-1/scripts/push.sh'			
 			}	
-		}		
+		}	
+		stage('Run service-1'){
+			steps {
+				sh './service-1/scripts/run.sh'
+			}
+		}
 	}
 }
