@@ -8,7 +8,7 @@ COPY requirements.txt /usr/src/app
 
 RUN pip3 install -r requirements.txt
 
-COPY ./service-1 /usr/src/app
+COPY . /usr/src/app
 
 EXPOSE 5000
 
