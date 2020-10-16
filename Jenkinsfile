@@ -8,17 +8,17 @@ pipeline {
 		}
 		stage('Build service-1'){
 			steps {
-				sh './service-1/scripts/build.sh'
+				sh './service-1/build.sh'
 			}
 		}
 		stage('Push service-1'){
 			steps {
-				sh './service-1/scripts/push.sh'			
+				sh './service-1/push.sh'			
 			}	
 		}	
 		stage('Run service-1'){
 			steps {
-				sh './service-1/scripts/run.sh'
+				sh './service-1/run.sh'
 			}
 		}
 	}

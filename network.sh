@@ -1,2 +1,2 @@
 #! /bin/bash
-sudo docker network create rim_network
+sudo docker network create my_network
