@@ -13,7 +13,7 @@ pipeline {
 		}
 		stage('Push service-1'){
 			steps {
-				sh 'ls -al'			
+				sh 'ls -al ./service-1'			
 			}	
 		}	
 		stage('Run service-1'){
