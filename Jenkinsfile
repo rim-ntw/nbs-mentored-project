@@ -8,7 +8,7 @@ pipeline {
 		}
 		stage('Test service 1,2,3,4'){
 			steps{
-				sh'./scripts/run_tests.sh'
+				sh'./scripts/test.sh'
 			}
 		}
 		stage('Build service containers 1,2,3,4'){
