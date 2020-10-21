@@ -3,22 +3,32 @@ pipeline {
 	stages {
 		stage('Create Network'){
 			steps {
-				sh './network.sh'
+				sh './scripts/network.sh'
 			}
 		}
-		stage('Build service-1'){
-			steps {
-				sh './service-1/build.sh'
+		stage('Test service 1,2,3,4'){
+			steps{
+				sh'./scripts/run_tests.sh'
 			}
 		}
-		stage('Push service-1'){
+		stage('Build service containers 1,2,3,4'){
 			steps {
-				sh './service-1/push.sh'		
+				sh './scripts/build_services.sh'
+			}
+		}
+		stage('Push service containers 1,2,3,4'){
+			steps {
+				sh './scripts/push_services.sh'		
 			}	
 		}	
-		stage('Run service-1'){
+		stage('Pull service containers 1,2,3,4'){
 			steps {
-				sh './service-1/run.sh'
+				sh './scripts/pull_services.sh'
+			}
+		}
+		stage('Run service containers 1,2,3,4'){
+			steps {
+				sh './scripts/run_services.sh'
 			}
 		}
 	}
