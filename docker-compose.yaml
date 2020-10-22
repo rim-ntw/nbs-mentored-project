@@ -2,7 +2,7 @@ version: '3.7'
 services:
   service-1:      
     build: ./service-1
-    image: localhost:8082/service1
+    network_mode: host
     container_name: service1
     ports: 
     - target: 5000
@@ -11,7 +11,7 @@ services:
 
   service-2:
     build: ./service-2
-    image: localhost:8082/service2
+    network_mode: host
     container_name: service2
     ports:
     - target: 5001
@@ -20,7 +20,7 @@ services:
       
   service-3:
     build: ./service-3
-    image: localhost:8082/service3
+    network_mode: host
     container_name: service3
     ports:
     - target: 5002
@@ -29,7 +29,7 @@ services:
       
   service-4:
     build: ./service-4
-    image: localhost:8082/service4
+    network_mode: host
     container_name: service4
     ports:
     - target: 5003
