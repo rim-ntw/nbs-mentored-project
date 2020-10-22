@@ -1,6 +1,16 @@
 pipeline {
 	agent any
 	stages {
+		stage('Install Docker'){
+			steps {
+				sh "./Ansible/playbook.yaml"
+			}
+		}
+		stage('Install Nexus'){
+			steps {
+				sh "./Scripts/nexusinstaller.sh"
+			}
+		}
 		stage('Create Network'){
 			steps {
 				sh './scripts/network.sh'
