@@ -39,7 +39,9 @@
     apt:
       name: docker-ce
       update_cache: yes 
+
 #step5 Run docker
   - name: 'Run docker'
-    name: docker
-    state: started
+    service:
+      name: docker
+      state: started
