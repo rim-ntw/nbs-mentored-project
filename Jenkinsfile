@@ -3,12 +3,12 @@ pipeline {
 	stages {
 		stage('Install Docker'){
 			steps {
-				sh "./Ansible/playbook.yaml"
+				sh "./playbook.yaml"
 			}
 		}
 		stage('Install Nexus'){
 			steps {
-				sh "./Scripts/nexusinstaller.sh"
+				sh "./scripts/run_nexus.sh"
 			}
 		}
 		stage('Create Network'){
