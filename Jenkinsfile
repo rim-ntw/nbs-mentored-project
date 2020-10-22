@@ -3,12 +3,12 @@ pipeline {
 	stages {
 		stage('Install Docker'){
 			steps {
-				sh "./playbook.yaml"
+				sh './playbook.yaml'
 			}
 		}
 		stage('Install Nexus'){
 			steps {
-				sh "./scripts/run_nexus.sh"
+				sh './scripts/run_nexus.sh'
 			}
 		}
 		stage('Create Network'){
