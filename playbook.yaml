@@ -1,0 +1,45 @@
+---
+- hosts: 127.0.0.1
+  connection: local
+  become: true
+
+  tasks:
+  - name: 'Install apt-transport-https dependency using apt'
+    apt:
+      name: apt-transport-https
+      state: latest
+      update_cache: true
+  - name: 'Install ca-certificates dependency using apt'
+    apt:
+      name: ca-certificates
+      state: latest
+      update_cache: true
+  - name: 'Install curl dependency using apt'
+    apt:
+      name: curl
+      state: latest
+      update_cache: true
+  - name: 'Install software-properties-common dependency using apt'
+    apt:
+      name: apt-transport-https
+      state: latest
+      update_cache: true
+
+#step2 Add the Docker apt key
+  - name: 'Add Docker GPG key' 
+    apt_key: url=https://download.docker.com/linux/ubuntu/gpg
+
+#step3 Add a Docker apt repository
+  - name: 'Add Docker APT repository' 
+    apt_repository: 
+      repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
+
+#step4 Install docker-ce using apt
+  - name: 'Update apt and install docker-ce'
+    apt:
+      name: docker-ce
+      update_cache: yes 
+#step4.1 Install module for python
+  - name: Install module for python
+    pip:
+      name: docker 
