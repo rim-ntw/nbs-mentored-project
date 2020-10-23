@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('Install Docker'){
 			steps {
-				sh 'ansible-playbook -i '127.0.0.1' playbook.yaml'
+				sh './scripts/run_playbook.sh'
 			}
 		}
 		stage('Install Nexus'){
