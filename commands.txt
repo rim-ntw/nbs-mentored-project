@@ -15,6 +15,5 @@
    94  sudo docker start nexus
   117  sudo docker network rm  my_network
   118  sudo su - jenkins
-
-
+# new_token: c9797dd0bfb377f5e2433b2af9410e9723a1be62
    
