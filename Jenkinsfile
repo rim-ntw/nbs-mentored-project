@@ -6,11 +6,6 @@ pipeline {
 				sh './scripts/run_playbook.sh'
 			}
 		}
-		stage('Install Nexus'){
-			steps {
-				sh './scripts/run_nexus.sh'
-			}
-		}
 		stage('Create Network'){
 			steps {
 				sh './scripts/network.sh'
