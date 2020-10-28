@@ -1,0 +1,21 @@
+- Why are we doing this?
+The key point of this project is to improve our skills and apply all knowledge we got from the previous 4 weeks of learning.  
+
+
+- How I expected the challenge to go.
+I expected it to be very complex and complicated, but at the beginning, I tried to simplify all tasks I have and started work from tasks I was familiar with.
+
+
+- What went well?
+I split tasks into smaller tasks and started by making scripts and Dockerfiles with Jenkinfile, when everything runs without errors, I went to the next stage 
+and create docker-compose with playbook, and nexus. The last step was to test everything with SonarQube and see the quality of code and security issues, it’s 
+also been fully implemented.
+
+
+- What didn't go as planned?
+The real issue was to install everything to VM every Monday, especially when VM stop responds because of a lost connection. Some days connection has been lost 
+for a few hours, no matter how many times I try to reset/reboot/restart/turn off/turn on and so on. 
+
+
+- Possible improvements for future challenges.
+Do not be overstressed when in the middle of the working process VM losing connection, and by resetting VM, all files which haven't been added to Git are lost. 
