@@ -6,11 +6,6 @@ pipeline {
 				sh './scripts/run_playbook.sh'
 			}
 		}
-		stage('Create Network'){
-			steps {
-				sh './scripts/network.sh'
-			}
-		}
 		stage('Test service 1,2,3,4'){
 			steps{
 				sh'./scripts/test.sh'
