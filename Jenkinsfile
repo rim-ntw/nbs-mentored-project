@@ -19,7 +19,8 @@ pipeline {
 		stage('Push service containers 1,2,3,4'){
 			steps {
 				sh './scripts/push_services.sh'		
-			}	
+			}
+		}
 		stage('Run service containers 1,2,3,4'){
 			steps {
 				sh './scripts/run_services.sh'
