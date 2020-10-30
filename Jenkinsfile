@@ -20,12 +20,6 @@ pipeline {
 			steps {
 				sh './scripts/push_services.sh'		
 			}	
-		}	
-		stage('Pull service containers 1,2,3,4'){
-			steps {
-				sh './scripts/pull_services.sh'
-			}
-		}
 		stage('Run service containers 1,2,3,4'){
 			steps {
 				sh './scripts/run_services.sh'
